@@ -3,8 +3,27 @@
 // in the html.
 $(function () {
     
-// Display current day 
+  // Display current day 
   var currentDay = dayjs().format("dddd, MMMM D");
   $("#currentDay").text(currentDay);
+
+  // Made Time blocks
+  var businessHours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
+  for (var i = 0; i < businessHours.length; i++) {
+    var hour = businessHours[i];
+    var timeBlock = $("<div>").addClass("row time-block");
+    var hourColumn = $("<div>").addClass("col-md-2 hour").text(hour);
+    var textArea = $("<textarea>").addClass("col-md-9 description");
+
+    // Check block for tense
+     var currentHour = dayjs().hour();
+     var blockHour = parseInt(hour);
+     if (blockHour < currentHour) {
+       textArea.addClass("past");
+     } else if (blockHour === currentHour) {
+       textArea.addClass("present");
+     } else {
+       textArea.addClass("future");
+     }
   });
   
