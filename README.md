@@ -17,4 +17,4 @@ SO THAT I can manage my time effectively
 
 ### Screenshots:
 
-! [Screenshot 1](./Screenshot%20(128).png)
+![Screenshot 1](./Screenshot%20(128).png)
