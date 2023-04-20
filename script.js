@@ -34,5 +34,15 @@ $(function () {
 
     var saveButton = $("<button>").addClass("col-md-1 saveBtn").html("<i class='fas fa-save'></i>");
 
+    // Save local when clicked
+    saveButton.click(function() {
+        var eventText = $(this).siblings(".description").val();
+        localStorage.setItem(hour, eventText);
+      });
+  
+      timeBlock.append(hourColumn, textArea, saveButton);
+      $(".container").append(timeBlock);
+    }
+
   });
   
