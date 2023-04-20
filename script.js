@@ -25,5 +25,14 @@ $(function () {
      } else {
        textArea.addClass("future");
      }
+
+     // Local storage load for time block
+    var savedEvent = localStorage.getItem(hour);
+    if (savedEvent !== null) {
+      textArea.val(savedEvent);
+    }
+
+    var saveButton = $("<button>").addClass("col-md-1 saveBtn").html("<i class='fas fa-save'></i>");
+
   });
   
